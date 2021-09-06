@@ -38,7 +38,7 @@ router.get("/", (req, res) => {
 
 // get single blog.
 
-router.get("/blog/:id", (req, res) => {
+router.get("/blogs/:id", (req, res) => {
   Blog.findOne({
     where: {
       id: req.params.id,
