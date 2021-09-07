@@ -1,5 +1,5 @@
 <section>
-  <h2>Create New Post</h2>
+  <h2>Create New Blog</h2>
 
   <form class="new-blog-form">
     <div>
@@ -18,7 +18,7 @@
 <section>
   <h2>Your Blog Posts</h2>
   <ol>
-    {{#each Blogs as |blog|}}
+    {{#each blogs as |blog|}}
     <li>
       {{> blog-info blog}}
       <a href="/dashboard/edit/{{blog.id}}" class="edit-link">Edit Blog</a>
