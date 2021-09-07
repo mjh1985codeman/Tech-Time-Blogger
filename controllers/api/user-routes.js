@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
       res.status(500).json(err);
     });
 });
-
+//get specific user.
 router.get("/:id", (req, res) => {
   User.findOne({
     attributes: { exclude: ["password"] },
