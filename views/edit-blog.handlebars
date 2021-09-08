@@ -8,6 +8,9 @@
       <input name="blog-title" type="text" value="{{blog.title}}" />
     </div>
     <div>
+      <input name="blog-content" type="text" value="{{blog.content}}">
+    </div>
+    <div>
       <a href="/blog/{{blog.id}}">{{blog.comments.length}} {{format_plural "comment" blog.comments.length}}</a>
     </div>
     <button type="submit">Save post</button>
