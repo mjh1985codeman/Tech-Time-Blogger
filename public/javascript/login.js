@@ -18,6 +18,7 @@ async function loginFormHandler(event) {
       document.location.replace("/dashboard/");
     } else {
       alert(response.statusText);
+      //Add to add the "await" to capture the response properly.
       const data = await response.json();
       console.log(data);
     }
