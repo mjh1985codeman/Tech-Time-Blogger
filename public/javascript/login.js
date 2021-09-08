@@ -18,8 +18,12 @@ async function loginFormHandler(event) {
       document.location.replace("/dashboard/");
     } else {
       alert(response.statusText);
+      const data = await response.json();
+      console.log(data);
     }
   }
+
+  console.log("Do you see me? 1");
 }
 
 async function signupFormHandler(event) {
@@ -44,12 +48,22 @@ async function signupFormHandler(event) {
       alert(response.statusText);
     }
   }
+
+  console.log("Do you see me? 2");
 }
 
 document
   .querySelector(".login-form")
-  .addEventListener("submit", loginFormHandler);
+  .addEventListener(
+    "submit",
+    loginFormHandler,
+    console.log("you clicked the login button")
+  );
 
 document
   .querySelector(".signup-form")
-  .addEventListener("submit", signupFormHandler);
+  .addEventListener(
+    "submit",
+    signupFormHandler,
+    console.log("you clicked the sign up button.")
+  );
