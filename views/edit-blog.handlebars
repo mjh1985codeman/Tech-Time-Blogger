@@ -4,30 +4,41 @@
     <h2>
       Edit Blog
     </h2>
-    <form class="edit-blog-form">
-      <div>
-        <input name="blog-title" type="text" value="{{blog.title}}" />
-      </div>
-      <div>
-        <input name="blog-content" type="text" value="{{blog.content}}">
-      </div>
-      <div>
-        <a href="/blog/{{blog.id}}">{{blog.comments.length}} {{format_plural "comment" blog.comments.length}}</a>
-      </div>
-      <button type="submit">Save Blog</button>
-      <button type="button" class="delete-blog-btn">Delete blog</button>
-    </form>
+    <div class="mb-3">
+
+      <form class="edit-blog-form">
+        <div class="card-title">
+
+          <input name="blog-title" type="text" value="{{blog.title}}" />
+        </div>
+        <div class="card-body">
+
+          <textarea name="blog-content" cols="100" rows="10">
+            {{blog.content}}
+          </textarea>
+
+
+        </div>
+        <div>
+          <a href="/blog/{{blog.id}}">{{blog.comments.length}} {{format_plural "comment" blog.comments.length}}</a>
+        </div>
+        <button class="btn btn-danger" type="submit">Save Blog</button>
+        <button type="button" class="delete-blog-btn btn btn-danger">Delete blog</button>
+      </form>
+    </div>
   </article>
+  <div class="container">
 
-  <form class="comment-form">
-    <div>
-      <textarea name="comment-body"></textarea>
-    </div>
+    <form class="comment-form">
+      <div>
+        <textarea name="comment-body" cols="100"></textarea>
+      </div>
 
-    <div>
-      <button type="submit">add comment</button>
-    </div>
-  </form>
+      <div>
+        <button class="btn btn-danger" type="submit">add comment</button>
+      </div>
+    </form>
+  </div>
 </div>
 
 {{> comments blog.comments}}
