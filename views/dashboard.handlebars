@@ -1,33 +1,38 @@
 <section class="container">
   <h2>Create New Blog</h2>
+  <div class="card">
 
-  <form class="new-blog-form">
-    <div>
-      <label for="blog-title">Blog Title</label>
-      <input type="text" id="blog-title" name="blog-title" />
-    </div>
-    <div>
-      <label for="blog-content">Content</label>
-      <div class="form-floating">
-
-        <textarea class="form-control" type="text" id="blog-content" name="blog-content"></textarea>
+    <form class="new-blog-form">
+      <div class="card-header">
+        <label for="blog-title">Blog Title</label>
+        <input type="text" id="blog-title" name="blog-title" />
       </div>
-    </div>
-    <button type="submit" class="btn btn-info">Create Blog</button>
-  </form>
+      <div class="card-body">
+        <label for="blog-content">Content</label>
+        <div class="form-floating">
+
+          <textarea class="form-control" type="text" id="blog-content" name="blog-content"></textarea>
+        </div>
+      </div>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="submit" class="btn btn-danger m-2">Create Blog</button>
+
+      </div>
+    </form>
+  </div>
 </section>
 
 {{#if blogs.length}}
 <section class="container">
   <h2>Your Blog Posts:</h2>
-  <ul>
+  <div>
     {{#each blogs as |blog|}}
-    <li>
+    <div>
       {{> blogpost-info blog}}
       <a href="/dashboard/edit/{{blog.id}}" class="edit-link">Edit Blog</a>
-    </li>
+    </div>
     {{/each}}
-  </ul>
+  </div>
 </section>
 {{/if}}
 
