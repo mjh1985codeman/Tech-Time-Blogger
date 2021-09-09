@@ -11,16 +11,19 @@
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
-<body>
+<body class="bg-warning bg-opacity-10">
   <div class="wrapper">
     <header>
-      <h1>
-        <a href="/">Tech Time Blogger</a>
+      <h1 class="bg-dark bg-opacity-75 p-4">
+        <a class="link-light " href="/">Tech Time Blogger</a>
       </h1>
       <nav class="nav justify-content-end">
         {{#if loggedIn}}
-        <a href="/dashboard">My Dashboard</a>
-        <button id="logout" class="btn btn-light">logout</button>
+        <nav>
+          <a href="/dashboard">My Dashboard</a>
+          <button id="logout" class="btn btn-light">logout</button>
+        </nav>
+
         {{else}}
         {{!-- <a href="/login" class="badge badge-light">login</a> --}}
         <div class="alert alert-primary" role="alert">
@@ -32,8 +35,8 @@
     <main>
       {{{ body }}}
     </main>
-    <footer class="card-footer fixed-bottom text-center">
-      Thanks for visiting!
+    <footer class="card-footer fixed-bottom text-center bg-light">
+      Thanks for Blogging with us!
     </footer>
   </div>
 

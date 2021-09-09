@@ -1,9 +1,9 @@
-<section>
+<section class="container">
   <h2>Create New Blog</h2>
 
   <form class="new-blog-form">
     <div>
-      <label for="blog-title">Title</label>
+      <label for="blog-title">Blog Title</label>
       <input type="text" id="blog-title" name="blog-title" />
     </div>
     <div>
@@ -13,13 +13,13 @@
         <textarea class="form-control" type="text" id="blog-content" name="blog-content"></textarea>
       </div>
     </div>
-    <button type="submit" class="btn btn-info">Create</button>
+    <button type="submit" class="btn btn-info">Create Blog</button>
   </form>
 </section>
 
 {{#if blogs.length}}
-<section>
-  <h2>Your Blog Posts</h2>
+<section class="container">
+  <h2>Your Blog Posts:</h2>
   <ul>
     {{#each blogs as |blog|}}
     <li>
