@@ -8,23 +8,26 @@
     </div>
     <div>
       <label for="blog-content">Content</label>
-      <input type="text" id="blog-content" name="blog-content" />
+      <div class="form-floating">
+
+        <textarea class="form-control" type="text" id="blog-content" name="blog-content"></textarea>
+      </div>
     </div>
-    <button type="submit" class="btn">Create</button>
+    <button type="submit" class="btn btn-info">Create</button>
   </form>
 </section>
 
 {{#if blogs.length}}
 <section>
   <h2>Your Blog Posts</h2>
-  <ol>
+  <ul>
     {{#each blogs as |blog|}}
     <li>
       {{> blogpost-info blog}}
       <a href="/dashboard/edit/{{blog.id}}" class="edit-link">Edit Blog</a>
     </li>
     {{/each}}
-  </ol>
+  </ul>
 </section>
 {{/if}}
 

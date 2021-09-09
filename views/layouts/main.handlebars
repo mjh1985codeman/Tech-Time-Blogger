@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech Time Blogger</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
@@ -16,23 +17,26 @@
       <h1>
         <a href="/">Tech Time Blogger</a>
       </h1>
-      <nav class="navbar navbar-dark bg-dark">
+      <nav class="nav justify-content-end">
         {{#if loggedIn}}
-        <a href="/dashboard">dashboard</a>
+        <a href="/dashboard">My Dashboard</a>
         <button id="logout" class="btn btn-light">logout</button>
-        {{else}} 
-        <a href="/login" class = "badge badge-light">login</a> 
+        {{else}}
+        {{!-- <a href="/login" class="badge badge-light">login</a> --}}
+        <div class="alert alert-primary" role="alert">
+          <a href="/login" class="nav-item">Login Page</a>
+        </div>
         {{/if}}
       </nav>
     </header>
     <main>
       {{{ body }}}
     </main>
-    <footer>
+    <footer class="card-footer fixed-bottom text-center">
       Thanks for visiting!
     </footer>
   </div>
-  
+
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
   {{/if}}
