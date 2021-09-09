@@ -2,7 +2,7 @@ async function editFormHandler(event) {
   event.preventDefault();
 
   const title = document.querySelector('input[name="blog-title"]').value.trim();
-  const content = document
+  const editContent = document
     .querySelector('input[name="blog-content"]')
     .value.trim();
 
@@ -13,7 +13,7 @@ async function editFormHandler(event) {
     method: "PUT",
     body: JSON.stringify({
       title,
-      content,
+      editContent,
     }),
     headers: {
       "Content-Type": "application/json",

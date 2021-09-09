@@ -1,32 +1,34 @@
-<article>
-  <a href="/dashboard"> &larr; Back to dashboard</a>
-  <h2>
-    Edit Blog
-  </h2>
-  <form class="edit-blog-form">
+<div class="container">
+
+  <article>
+    <h2>
+      Edit Blog
+    </h2>
+    <form class="edit-blog-form">
+      <div>
+        <input name="blog-title" type="text" value="{{blog.title}}" />
+      </div>
+      <div>
+        <input name="blog-content" type="text" value="{{blog.content}}">
+      </div>
+      <div>
+        <a href="/blog/{{blog.id}}">{{blog.comments.length}} {{format_plural "comment" blog.comments.length}}</a>
+      </div>
+      <button type="submit">Save Blog</button>
+      <button type="button" class="delete-blog-btn">Delete blog</button>
+    </form>
+  </article>
+
+  <form class="comment-form">
     <div>
-      <input name="blog-title" type="text" value="{{blog.title}}" />
+      <textarea name="comment-body"></textarea>
     </div>
+
     <div>
-      <input name="blog-content" type="text" value="{{blog.content}}">
+      <button type="submit">add comment</button>
     </div>
-    <div>
-      <a href="/blog/{{blog.id}}">{{blog.comments.length}} {{format_plural "comment" blog.comments.length}}</a>
-    </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-blog-btn">Delete blog</button>
   </form>
-</article>
-
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button type="submit">add comment</button>
-  </div>
-</form>
+</div>
 
 {{> comments blog.comments}}
 

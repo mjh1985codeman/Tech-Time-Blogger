@@ -29,7 +29,13 @@
     {{#each blogs as |blog|}}
     <div>
       {{> blogpost-info blog}}
-      <a href="/dashboard/edit/{{blog.id}}" class="edit-link">Edit Blog</a>
+      <div class="container">
+        <div class="m-2 fs-5 fst-italic">
+
+          <a href="/dashboard/edit/{{blog.id}}" class="edit-link">Edit Blog</a>
+        </div>
+      </div>
+
     </div>
     {{/each}}
   </div>
