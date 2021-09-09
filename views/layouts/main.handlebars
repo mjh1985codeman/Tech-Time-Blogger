@@ -17,20 +17,23 @@
       <h1 class="bg-dark bg-opacity-75 p-4">
         <a class="link-light " href="/">Tech Time Blogger</a>
       </h1>
-      <nav class="nav justify-content-end">
-        {{#if loggedIn}}
-        <nav>
-          <a href="/dashboard">My Dashboard</a>
-          <button id="logout" class="btn btn-light">logout</button>
-        </nav>
+      <div class="container">
 
-        {{else}}
-        {{!-- <a href="/login" class="badge badge-light">login</a> --}}
-        <div class="alert alert-primary" role="alert">
-          <a href="/login" class="nav-item">Login Page</a>
-        </div>
-        {{/if}}
-      </nav>
+        <nav class="nav justify-content-end">
+          {{#if loggedIn}}
+          <nav class="m-2">
+            <a class="m-4" href="/dashboard">My Dashboard</a>
+            <button id="logout" class="btn btn-outline-danger">logout</button>
+          </nav>
+
+          {{else}}
+          {{!-- <a href="/login" class="badge badge-light">login</a> --}}
+          <div class="alert alert-primary" role="alert">
+            <a href="/login" class="nav-item">Login Page</a>
+          </div>
+          {{/if}}
+        </nav>
+      </div>
     </header>
     <main>
       {{{ body }}}

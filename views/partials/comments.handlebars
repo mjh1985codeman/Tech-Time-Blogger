@@ -1,12 +1,24 @@
-<div class="comments">
-  {{#each this}}
-  <section class="comment">
-    <div class="meta">
-      {{user.username}} on {{format_date created_at}}
+<div class="container">
+
+  <div class="comments">
+    {{#each this}}
+    <div class="card m-2">
+
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+
+          <section class="comment">
+
+            <div class="text">
+              "{{comment_text}}"
+            </div>
+            <div class="blockquote-footer m-3">
+              {{user.username}} on {{format_date created_at}}
+            </div>
+          </section>
+        </blockquote>
+      </div>
     </div>
-    <div class="text">
-      {{comment_text}}
-    </div>
-  </section>
-  {{/each}}
+    {{/each}}
+  </div>
 </div>

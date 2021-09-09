@@ -1,13 +1,16 @@
-<article class="blog card">
-  <div class="title card-header">
-    <h4>{{title}}</h4>
-  </div>
-  <div class="card-body">
-   <p>{{content}}</p>
-  </div>
-  <div class="text-muted">
-    Blog Posted by {{user.username}} on {{format_date created_at}}
-    |
-    <a href="/blogs/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
-  </div>
-</article>
+<div class="container">
+
+  <article class="blog card">
+    <div class="title card-header">
+      <h4>{{title}}</h4>
+    </div>
+    <div class="card-body">
+      <p>{{content}}</p>
+    </div>
+    <div class="text-muted">
+      Blog Posted by {{user.username}} on {{format_date created_at}}
+      |
+      <a href="/blogs/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+    </div>
+  </article>
+</div>
